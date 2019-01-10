@@ -3,9 +3,9 @@
         <input type="text" placeholder="Search by Author Name">
     </div>
 
-    <a href>
-        <div cass="sr-only">Add New Author</div>
-    </a>
+    {{#link-to "author.create" class="btn-new"}}
+        <div class="sr-only">Add New Author</div>
+    {{/link-to}}
 </div>
 
 <div class="panel-content">
@@ -13,11 +13,9 @@
 
     <ul class="collection">
         {{#each model as |author|}}
-            <li>
-                <a href>
-                    {{author.first}} {{author.last}}
-                </a>
-            </li>
+            {{author-list-item first=author.first last=author.last authorId=author.id}}
         {{/each}}
     </ul>
 </div>
+
+{{outlet}}

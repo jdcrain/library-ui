@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-    model() {
-        return this.store.findAll('author');
+    model({ id }) {
+        return this.store.findRecord('author', id);
     }
 });
