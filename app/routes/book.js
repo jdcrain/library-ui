@@ -8,15 +8,14 @@ export default Route.extend({
     },
 
     model({ search }) {
-        // /authors?filter[query]=J
         if (search) {
-            return this.store.query('author', {
+            return this.store.query('book', {
                 filter: {
                     query: search
                 }
             });
         }
-
-        return this.store.findAll('author');
+        
+        return this.store.findAll('book');
     }
 });
