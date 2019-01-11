@@ -14,6 +14,7 @@ export default Component.extend({
         submitChanges(event) {
             event.preventDefault(); // prevent form from redirecting
 
+            // call the onsubmit property that was passed into the component
             this.onsubmit({
                 first: this.first,
                 last: this.last
