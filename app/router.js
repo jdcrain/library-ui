@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('book', { path: '/books' }, function() {
     this.route('create');
     this.route('detail', { path: '/:id' });
+    this.route('edit', { path: '/:id/edit' });
   });
 });
 
