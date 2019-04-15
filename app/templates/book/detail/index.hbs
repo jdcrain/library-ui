@@ -13,7 +13,7 @@
         {{#each model.reviews as |review|}}
             <li class="review">
                 <p>{{review.body}}</p>
-    {{log review}}
+                
                 <div class="details">
                     <p class="review-user">{{review.username}}</p>
                     <p class="review-time">{{moment-from-now review.createdAt}}</p>
