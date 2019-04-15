@@ -11,9 +11,6 @@ export default Controller.extend({
           email: attrs.email,
           password: attrs.password,
         })
-        .then(() => {
-          this.transitionToRoute('index');
-        })
         .catch(e => {
           this.set('errors', e.json.errors);
         });
