@@ -4,7 +4,7 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   isbn: DS.attr('string'),
   publishDate: DS.attr(),
-  username: DS.attr('string'),
+  username: DS.attr(),
 
   author: DS.belongsTo('author'),
   reviews: DS.hasMany('review'),
