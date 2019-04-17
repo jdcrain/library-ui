@@ -2,6 +2,9 @@
 
 module.exports = function(environment) {
   let ENV = {
+    DS: {
+      host: 'http://localhost:3000',
+    },
     modulePrefix: 'library-ui',
     environment,
     rootURL: '/',
@@ -26,7 +29,6 @@ module.exports = function(environment) {
     },
 
     'ember-simple-auth-token': {
-      serverTokenEndpoint: 'http://localhost:3000/session',
       refreshAccessTokens: false,
     },
   };
@@ -53,7 +55,14 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.DS.host = 'https://fast-mountain-48967.herokuapp.com';
+    ENV.fastboot.hostWhitelist = [
+      ENV.DS.host,
+      'secret-earth-40522.herokuapp.com',
+    ];
   }
+
+  ENV['ember-simple-auth-token'].serverTokenEndpoint = `${ENV.DS.host}/session`;
 
   return ENV;
 };

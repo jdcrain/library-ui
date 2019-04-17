@@ -1,10 +1,11 @@
 import DS from 'ember-data';
 import { computed } from '@ember/object';
 import { inject as service } from '@ember/service';
+import config from '../config/environment';
 
 export default DS.JSONAPIAdapter.extend({
   session: service(),
-  host: 'http://localhost:3000',
+  host: config.DS.host,
 
   headers: computed(function() {
     let session = this.get('session');
