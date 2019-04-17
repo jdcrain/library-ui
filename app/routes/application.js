@@ -5,6 +5,7 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 export default Route.extend(ApplicationRouteMixin, {
   session: service(),
   currentUser: service(),
+  fastboot: service(),
 
   beforeModel() {
     this._super(...arguments);
